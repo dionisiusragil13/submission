@@ -2,9 +2,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import os
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
 
 def load_data():
-    df = pd.read_csv('/submission/dashboard/main_data.csv')
+    df = pd.read_csv(f"{script_dir}/main_data.csv")
     return df
 
 def season_chart(df):
